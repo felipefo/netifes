@@ -1,22 +1,19 @@
 
-
 package modelo.persistencia.hibernate;
 
 
 import java.util.List;
-import model.Cliente;
-
+import modelo.Locacao;
 
 /**
- *
  * @author felipe
  */
-public class ClienteDAOImpl  extends GenericDAOImpl<Cliente> implements ClienteDAO {
+public class LocacaoDAOImpl  extends GenericDAOImpl<Locacao> implements LocacaoDAO {
 
-        public List<Cliente> buscaClientesApartirDoAno(int ano){            
+        public List<Locacao> buscaClientesApartirDoAno(int ano){            
             sessao = HibernateUtil.getSession();
             transacao = sessao.beginTransaction();                        
-            List<Cliente> lista = sessao.createQuery("from Cliente where ano >= " + ano).list();
+            List<Locacao> lista = sessao.createQuery("from locacao where ano >= " + ano).list();
             transacao.commit();            
             sessao.close();
             return lista;

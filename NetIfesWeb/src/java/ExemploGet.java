@@ -23,20 +23,12 @@ public class ExemploGet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Minha Primeira Página</title>");            
-            out.println("</head>");
-            out.println("<body>");            
-            out.println("<h1>Meu Primeiro Servlet");
-            out.println("<h1>Id: " + request.getParameter("id") + "</h1>");
+        try {            
+            //out.println("<h1>Id: " + request.getParameter("id") + "</h1>");
+            
+            
+            
             out.println("<h1>Nome: " + usuarios.get(request.getParameter("id")) + "</h1>");
-
-            out.println("</body>");
-            out.println("</html>");
         } finally {
             out.close();
         }
