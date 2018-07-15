@@ -23,7 +23,10 @@ public class Locacao {
     private  int id;
     private  Date data;
     private  Time time;
-
+    
+    //soh para testes.
+    private  String nome;
+    
     public int getId() {
         return id;
     }
@@ -31,6 +34,15 @@ public class Locacao {
     public void setId(int id) {
         this.id = id;
     }
+    
+     public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
 
     public Date getData() {
         return data;

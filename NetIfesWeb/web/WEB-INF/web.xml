@@ -4,35 +4,39 @@
         <servlet-name>OiMundo</servlet-name>
         <servlet-class>OiMundo</servlet-class>
     </servlet>
-    
     <servlet>
         <servlet-name>RecebeJSON</servlet-name>
         <servlet-class>RecebeJSON</servlet-class>
     </servlet>
-    
     <servlet>
         <servlet-name>ExemploGet</servlet-name>
         <servlet-class>ExemploGet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RecebeDados</servlet-name>
-        <servlet-class>RecebeDados</servlet-class>
+        <servlet-name>ServicoApi</servlet-name>
+        <servlet-class>ServicoApi</servlet-class>
     </servlet>
-   
     <servlet-mapping>
         <servlet-name>OiMundo</servlet-name>
         <url-pattern>/OiMundo</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RecebeDados</servlet-name>
-        <url-pattern>/RecebeDados</url-pattern>
+        <servlet-name>ServicoApi</servlet-name>
+        <url-pattern>/api</url-pattern>
     </servlet-mapping>
-   
+    <servlet-mapping>
+        <servlet-name>ServicoApi</servlet-name>
+        <url-pattern>/locacao</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>ServicoApi</servlet-name>
+        <url-pattern>/cliente</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>RecebeJSON</servlet-name>
         <url-pattern>/RecebeJSON</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>ExemploGet</servlet-name>
         <url-pattern>/exemploget</url-pattern>

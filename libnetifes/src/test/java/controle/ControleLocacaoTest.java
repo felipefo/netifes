@@ -32,10 +32,10 @@ public class ControleLocacaoTest extends TestCase {
         
         Locacao novaLocacao = new Locacao();
         novaLocacao.setData(new Date());       
-        ControleLocacao controleLocacao = new ControleLocacao();                
+        ControleLocacao<Locacao> controleLocacao = new ControleLocacao<Locacao>();                
         controleLocacao.inserir(novaLocacao);
-        
-        System.out.println(controleLocacao.getLocacoes());        
+                        
+        System.out.println(controleLocacao.pegarTodos());        
         
     }
     
