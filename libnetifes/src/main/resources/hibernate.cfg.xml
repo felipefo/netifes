@@ -13,5 +13,6 @@
     <property name="hibernate.connection.pool_size">100</property>
     <mapping class="modelo.Locacao"/>
     <mapping class="modelo.Cliente"/>
+    <mapping class="modelo.Filme"/>
   </session-factory>
 </hibernate-configuration>

@@ -5,6 +5,7 @@ import controle.ControleLocacao;
 import controle.IControle;
 import java.util.Map;
 import modelo.Cliente;
+import modelo.Filme;
 import modelo.Locacao;
 
 /**
@@ -31,6 +32,14 @@ public class FabricaDeModelo {
             objModelo = new Cliente();
             Cliente cliente = (Cliente) objModelo;            
             cliente.setNome((String) parametros.get("nome"));
+        } else if (nomeModelo.equals("filme")) {
+            objModelo = new Filme();
+            Filme filme = (Filme) objModelo;            
+            filme.setNome((String) parametros.get("nome"));
+            filme.setCategoria((String) parametros.get("categoria"));
+            filme.setDuracao( Float.parseFloat((String) parametros.get("duracao")));
+            filme.setValor( Float.parseFloat((String) parametros.get("preco")));
+            filme.setClassificacao((String) parametros.get("classificacao"));
         }
         return objModelo;
     }

@@ -8,7 +8,7 @@ import modelo.Cliente;
 /**
  * @author felipe
  */
-public class ClienteDAOImpl  extends GenericDAOImpl<Cliente> implements ClienteDAO {
+public class ClienteDAOImpl  extends GenericDAOImpl<Cliente> implements IClienteDAO {
 
         public List<Cliente> buscaClientesApartirDoAno(int ano){            
             sessao = HibernateUtil.getSession();
