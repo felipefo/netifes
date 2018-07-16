@@ -24,9 +24,10 @@ public final class HibernateUtil {
         Properties properties = configuration.getProperties();
         if(serviceRegistry == null){
             serviceRegistry = new ServiceRegistryBuilder().applySettings(properties).buildServiceRegistry();
+            
         }
         if(sessionFactory == null){
-            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+            sessionFactory = configuration.buildSessionFactory(serviceRegistry);            
         }
         return sessionFactory;
     }
