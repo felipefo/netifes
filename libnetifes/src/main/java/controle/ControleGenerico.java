@@ -6,7 +6,6 @@
 package controle;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import modelo.persistencia.hibernate.GenericDAO;
 

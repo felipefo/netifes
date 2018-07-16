@@ -29,7 +29,9 @@ public class ServicoApi extends HttpServlet {
             initHanlder(request);
             //handler do verbo POST
             if(request.getMethod().equalsIgnoreCase("POST")){
-                FabricaDeModelo fabricaModelo = new FabricaDeModelo(request.getParameterMap());                
+                //adaptando o resquest mapa do tipo <String,String[]> para <String,String>
+                ParameterAdapter parameterAdapter = new ParameterAdapter(request.getParameterMap());
+                FabricaDeModelo fabricaModelo = new FabricaDeModelo(parameterAdapter);                
                 Object novoModelo =  fabricaModelo.getModelo(this.modelo);
                 this.controle.inserir(novoModelo);                
             } //handler do verbo GET ALL

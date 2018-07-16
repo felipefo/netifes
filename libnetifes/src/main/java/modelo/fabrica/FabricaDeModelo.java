@@ -15,6 +15,7 @@ import modelo.Locacao;
 public class FabricaDeModelo {
 
     Map parametros = null;
+    
 
     public FabricaDeModelo(Map parametros) {
         this.parametros = parametros;
@@ -25,15 +26,11 @@ public class FabricaDeModelo {
         if (nomeModelo.equals("locacao")) {
             objModelo = new Locacao();
             Locacao locacao = (Locacao) objModelo;
-            //tratar quando esta vazio
-            String [] arg = (String [])parametros.get("nome");
-            locacao.setNome(arg[0]);
+            locacao.setNome((String) parametros.get("nome"));
         } else if (nomeModelo.equals("cliente")) {
             objModelo = new Cliente();
             Cliente cliente = (Cliente) objModelo;            
-            //tratar quando esta vazio
-            String [] arg = (String [])parametros.get("nome");
-            cliente.setNome((String) arg[0]);
+            cliente.setNome((String) parametros.get("nome"));
         }
         return objModelo;
     }
