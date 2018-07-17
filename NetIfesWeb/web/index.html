@@ -15,8 +15,8 @@
                 </a>
                 <ul id="nav-mobile" style="margin-left:150px;" class="left hide-on-med-and-down">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="series.html">Séries</a></li>
-                    <li><a href="filmes.html">Filmes</a></li>
+                    <li><a href="serie.html">Séries</a></li>
+                    <li><a href="filme.html">Filmes</a></li>
                     <li><a href="logar.html">Logar</a></li>
                 </ul>
             </div>   
@@ -24,14 +24,14 @@
         <!-- menu-->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="series.html">Séries</a></li>
-            <li><a href="filmes.html">Filmes</a></li>
+            <li><a href="serie.html">Séries</a></li>
+            <li><a href="filme.html">Filmes</a></li>
             <li><a href="#">Logar</a></li>
         </ul>
-        
-        <div id="filmes"  style="margin-top:40px;" class="row">
+    
+        <div id="filmes" class="center-align row" style="margin-top:40px;">
         </div>
-       
+
         <!-- Compiled and minified CSS -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -48,18 +48,15 @@
                     var items = [];                    
                     $.each( data, function( key, val ) {                     
                      card += 
-                        '<div class="col m4">'+
+                        '<div class="col m3">'+
                           '<div class="card">'+
                             '<div class="card-image">'+
                            '   <img src="images/starwars.png">'+                           
                            ' </div>'+
                            ' <div class="card-content">'+
-                           '   <p><a href="#">' + val.nome +'</a></p>'+
-                           ' </div>'+
-                           ' <div class="card-action">'+
-                           '   <a href="#">Detalhes</a>'+
-                           ' <p>' + val.valor+ '<p>'+
-                           ' </div>'+
+                           '   <p>&#9733;&#9733;&#9733;&#9733;&#9734;<span class="right">'+ val.duracao+ '\'</span></p>'+
+                           '   <p><a style="text-align: justify;" href="#">' + val.nome +' <span style="color:red">R$ ' + val.valor+ '</span></a></p>'+                           
+                           ' </div>'+                           
                           '</div>'+                     
                       '</div>';                      
                 });

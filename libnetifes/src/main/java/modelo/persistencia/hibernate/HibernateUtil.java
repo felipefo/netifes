@@ -15,24 +15,20 @@ import org.hibernate.service.ServiceRegistryBuilder;
  */
 public final class HibernateUtil {
 
-    private static SessionFactory sessionFactory;
-    private static ServiceRegistry serviceRegistry = null;
+    private SessionFactory sessionFactory;
+    private ServiceRegistry serviceRegistry = null;
 
-    private static SessionFactory getSessionFactory() throws HibernateException {
+    private SessionFactory getSessionFactory() throws HibernateException {
         Configuration configuration = new Configuration();
         configuration.configure();
         Properties properties = configuration.getProperties();
-        if(serviceRegistry == null){
-            serviceRegistry = new ServiceRegistryBuilder().applySettings(properties).buildServiceRegistry();
+        serviceRegistry = new ServiceRegistryBuilder().applySettings(properties).buildServiceRegistry();
             
-        }
-        if(sessionFactory == null){
-            sessionFactory = configuration.buildSessionFactory(serviceRegistry);            
-        }
+        sessionFactory = configuration.buildSessionFactory(serviceRegistry);            
         return sessionFactory;
     }
 
-    public static Session getSession() {
+    public Session getSession() {
         return getSessionFactory().openSession();
     }
 }

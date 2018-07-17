@@ -10,8 +10,12 @@ import modelo.Cliente;
  */
 public class FilmeDAOImpl  extends GenericDAOImpl<Cliente> implements IClienteDAO {
 
+       
+    
+    
         public List<Cliente> buscaClientesApartirDoAno(int ano){            
-            sessao = HibernateUtil.getSession();
+            HibernateUtil hibernate = new HibernateUtil();        
+            this.sessao = hibernate.getSession();
             transacao = sessao.beginTransaction();                        
             List<Cliente> lista = sessao.createQuery("from cliente where ano >= " + ano).list();
             transacao.commit();            

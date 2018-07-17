@@ -10,12 +10,14 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
     protected Session sessao;
     protected Transaction transacao;
 
+    
     /**
      * Creates a new instance of GenericDAO
      */
     public void inserir(T obj) throws Exception {
         try {
-            sessao = HibernateUtil.getSession();
+            HibernateUtil hibernate = new HibernateUtil();        
+            this.sessao = hibernate.getSession();
             transacao = sessao.beginTransaction();
             sessao.save(obj);
             sessao.flush();
@@ -30,7 +32,8 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 
     public void alterar(T obj) throws Exception {
         try {
-            sessao = HibernateUtil.getSession();
+            HibernateUtil hibernate = new HibernateUtil();        
+            this.sessao = hibernate.getSession();
             transacao = sessao.beginTransaction();
             sessao.update(obj);
             sessao.flush();
@@ -46,7 +49,8 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
 
     public void deletar(T obj) throws Exception {
         try {
-            sessao = HibernateUtil.getSession();
+            HibernateUtil hibernate = new HibernateUtil();        
+            this.sessao = hibernate.getSession();
             transacao = sessao.beginTransaction();
             sessao.delete(obj);
             sessao.flush();
@@ -62,9 +66,9 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
     public List<T> listar(Class clazz) throws Exception {
         List objts;
         try {
-            sessao = HibernateUtil.getSession();
-            transacao = sessao.beginTransaction();
-
+            HibernateUtil hibernate = new HibernateUtil();        
+            this.sessao = hibernate.getSession();
+            transacao = sessao.beginTransaction();            
             objts = null;
             Criteria selectAll = sessao.createCriteria(clazz);
             transacao.commit();
@@ -81,7 +85,8 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
     public T listar(Class clazz, String pk) throws Exception {
         Object ob;
         try {
-            sessao = HibernateUtil.getSession();
+            HibernateUtil hibernate = new HibernateUtil();        
+            this.sessao = hibernate.getSession();
             transacao = sessao.beginTransaction();
             //Object objt = sessao.load(clazz, new Integer(Integer.parseInt(pk)) );
             ob = sessao.load(clazz, new Integer(Integer.parseInt(pk)));
