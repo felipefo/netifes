@@ -11,8 +11,7 @@ import modelo.Cliente;
 public class ClienteDAOImpl  extends GenericDAOImpl<Cliente> implements IClienteDAO {
 
         public List<Cliente> buscaClientesApartirDoAno(int ano){            
-            HibernateUtil hibernate = new HibernateUtil();        
-            this.sessao = hibernate.getSession();
+            this.sessao = HibernateUtility.getSession();            
             transacao = sessao.beginTransaction();                        
             List<Cliente> lista = sessao.createQuery("from cliente where ano >= " + ano).list();
             transacao.commit();            
