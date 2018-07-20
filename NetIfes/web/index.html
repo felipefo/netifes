@@ -44,7 +44,9 @@
             });
             $( document ).ready(function() {                
                 var card = "";
-                $.getJSON( "/netifes/filme", function( data ) {
+                $("#loading").show();
+                $.getJSON( "filme", function( data ) {
+                    
                     var items = [];                    
                     $.each( data, function( key, val ) {                     
                      card += 
@@ -66,9 +68,31 @@
                 }else{
                     $("#filmes").html(card);
                    }
+                }).fail(function() {
+                    M.toast({html: 'Não foi possível carregar a lista de filmes'})
+                })
+                .always(function() {
+                    $("#loading").hide();
                 });                
             });
             
         </script>
+        
+   <div id="loading" style="display:none"> 
+       <center>
+            <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+           </div>     
+    </center>
+  </div>
+        
     </body>
 </html>

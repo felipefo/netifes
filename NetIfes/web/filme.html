@@ -1,0 +1,48 @@
+<html>
+       <head>
+        <title>NetIfes</title>
+        <meta charset="UTF-8">
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="margin:40px;">        
+       
+        
+        <h4>Cadastro de Filmes</h4>
+       <form action="filme" method="POST">
+            <input placeholder="Nome do Filme"  type="text" name="nome" required/><br />
+            <div class="input-field col s12">
+                <select>
+                <option value="" disabled selected>Seleciona a Catetoria</option>
+                <option value="Ação">Ação</option>
+                <option value="Aventura">Aventura</option>
+                <option value="Suspense">Suspense</option>
+                </select>
+                <label>Categoria</label>
+            </div>
+            
+            
+            <input placeholder="Duracao" type="text" name="duracao" required/><br />                        
+            <input placeholder="Preco" type="text" name="preco" required/><br />            
+            <input placeholder="Imagem" type="text" name="imagem" required/><br />   
+            <input  placeholder="Classificação" type="text" name="classificacao" required/><br />
+            <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                <i class="material-icons right">send</i>
+            </button>      
+        </form>
+        
+      <!-- Compiled and minified CSS -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+           
+         <script>            
+             $(document).ready(function(){
+                $('select').formSelect();
+         });
+        </script>
+        
+    </body>
+</html>
+
