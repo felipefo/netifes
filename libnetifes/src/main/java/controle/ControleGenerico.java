@@ -7,7 +7,7 @@ package controle;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
-import modelo.persistencia.hibernate.GenericDAO;
+import modelo.persistencia.IGenericDAO;
 
 /**
  * Controlador Generico para ser utilizado por todos os cruds
@@ -15,13 +15,30 @@ import modelo.persistencia.hibernate.GenericDAO;
  */
 public abstract class ControleGenerico<T> implements IControle<T> {
             
-    private final GenericDAO dao;
-    private final Class type;
+ 
+    private IGenericDAO dao;
+    private Class type;    
+    
 
-    public ControleGenerico(GenericDAO dao, Class type) {
-        this.dao = dao;
-        this.type = type;
+    public IGenericDAO getDao() {
+        return dao;
     }
+    
+    public void setDAO(IGenericDAO object) throws Exception {
+        this.dao = object;
+    }
+         
+    
+    public ControleGenerico(IGenericDAO dao, Class type) {
+        this.dao = dao;
+        this.type = type;      
+    }
+
+    public ControleGenerico(Class type) {        
+        this.type = type;      
+    }
+
+    
 
     @Override
     public String pegarTodos() throws Exception {

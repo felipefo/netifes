@@ -1,6 +1,8 @@
 
 package controle;
 
+import modelo.persistencia.IGenericDAO;
+
 
 /**
  *
@@ -11,6 +13,7 @@ public interface IControle<T> {
     
         public String pegarTodos() throws Exception;
         public void inserir(T objeto) throws Exception;
-        public void remover(T locacao) throws Exception;
+        public void remover(T object) throws Exception;
+        public void setDAO(IGenericDAO object) throws Exception;
 
 }
