@@ -2,6 +2,7 @@
 package modelo.persistencia.hibernate;
 
 
+import modelo.persistencia.IClienteDAO;
 import java.util.List;
 import modelo.Cliente;
 

@@ -4,8 +4,9 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import modelo.persistencia.IGenericDAO;
 
-public abstract class GenericDAOImpl<T> implements GenericDAO<T> {
+public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
 
     protected Session sessao;
     protected Transaction transacao;
