@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import controle.FabricaDeControle;
+import controle.FabricaDeControle.EstretegiaPersistencia;
 import controle.IControle;
 import java.util.Date;
 import java.util.logging.Level;
@@ -32,7 +33,7 @@ public class ServicoApi extends HttpServlet {
             if(request.getMethod().equalsIgnoreCase("POST")){
                 //adaptando o resquest mapa do tipo <String,String[]> para <String,String>
                 ParameterAdapter parameterAdapter = new ParameterAdapter(request.getParameterMap());
-                FabricaDeModelo fabricaModelo = new FabricaDeModelo(parameterAdapter);                
+                FabricaDeModelo fabricaModelo = new FabricaDeModelo(parameterAdapter);                                
                 Object novoModelo =  fabricaModelo.getModelo(this.modelo);
                 this.controle.inserir(novoModelo);                
             } //handler do verbo GET ALL
@@ -62,7 +63,9 @@ public class ServicoApi extends HttpServlet {
     private void  initHanlder(HttpServletRequest request){        
        String path = request.getRequestURI().substring(request.getContextPath().length());
        this.modelo = path.replace("/", "");
-       this.controle  = FabricaDeControle.getControle(modelo);       
+       FabricaDeControle fabrica = new FabricaDeControle();
+       fabrica.setEstrategia(EstretegiaPersistencia.JDBC);
+       this.controle  = fabrica.getControle(modelo);       
     }
 
     @Override
