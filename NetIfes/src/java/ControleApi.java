@@ -16,7 +16,7 @@ import modelo.Locacao;
 import modelo.fabrica.FabricaDeModelo;
 
 
-public class ServicoApi extends HttpServlet {
+public class ControleApi extends HttpServlet {
         
     private IControle controle = null; 
     private String modelo = null;
@@ -44,13 +44,13 @@ public class ServicoApi extends HttpServlet {
                         String json = this.controle.pegarTodos();
                         out.println(json);
                     } catch (Exception ex) {
-                        Logger.getLogger(ServicoApi.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(ControleApi.class.getName()).log(Level.SEVERE, null, ex);
                         ex.printStackTrace();
                     }
                 }
             }            
         } catch (Exception ex) {
-            Logger.getLogger(ServicoApi.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControleApi.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             out.close();
         }
