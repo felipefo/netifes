@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controle;
+package aplicacao;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
-import modelo.persistencia.IGenericDAO;
+import dominio.persistencia.IGenericDAO;
 
 /**
  * Controlador Generico para ser utilizado por todos os cruds

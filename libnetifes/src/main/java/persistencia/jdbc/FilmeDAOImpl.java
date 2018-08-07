@@ -1,10 +1,10 @@
 
-package modelo.persistencia.jdbc;
+package persistencia.jdbc;
 
 
-import modelo.persistencia.IFilmeDAO;
+import dominio.persistencia.IFilmeDAO;
 import java.util.List;
-import modelo.Filme;
+import dominio.Filme;
 
 /**
  * @author felipe

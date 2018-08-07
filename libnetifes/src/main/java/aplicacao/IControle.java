@@ -1,7 +1,7 @@
 
-package controle;
+package aplicacao;
 
-import modelo.persistencia.IGenericDAO;
+import dominio.persistencia.IGenericDAO;
 
 
 /**

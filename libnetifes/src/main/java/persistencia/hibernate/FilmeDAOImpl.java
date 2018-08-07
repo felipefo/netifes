@@ -1,10 +1,10 @@
 
-package modelo.persistencia.hibernate;
+package persistencia.hibernate;
 
 
-import modelo.persistencia.IClienteDAO;
+import dominio.persistencia.IClienteDAO;
 import java.util.List;
-import modelo.Cliente;
+import dominio.Cliente;
 
 /**
  * @author felipe

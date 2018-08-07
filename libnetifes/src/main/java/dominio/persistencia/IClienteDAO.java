@@ -1,10 +1,10 @@
 
 
-package modelo.persistencia;
+package dominio.persistencia;
 
 
 import java.util.List;
-import modelo.Cliente;
+import dominio.Cliente;
 
 /**
  *

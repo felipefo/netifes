@@ -1,10 +1,10 @@
-package controle;
+package aplicacao;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.Cliente;
-import modelo.Filme;
-import modelo.Locacao;
+import dominio.Cliente;
+import dominio.Filme;
+import dominio.Locacao;
 
 public class FabricaDeControle {
 
@@ -32,17 +32,17 @@ public class FabricaDeControle {
             if (nomeControle.equals("locacao")) {
                 controle = new ControleLocacao<Locacao>();
                 if (this.estrategia == EstretegiaPersistencia.HIBERNATE) {
-                    controle.setDAO(new modelo.persistencia.hibernate.LocacaoDAOImpl());
+                    controle.setDAO(new persistencia.hibernate.LocacaoDAOImpl());
                 }
             } else if (nomeControle.equals("cliente")) {
                 controle = new ControleCliente<Cliente>();
-                controle.setDAO(new modelo.persistencia.hibernate.ClienteDAOImpl());
+                controle.setDAO(new persistencia.hibernate.ClienteDAOImpl());
             } else if (nomeControle.equals("filme")) {
                 controle = new ControleFilme<Filme>();
                 if (this.estrategia == EstretegiaPersistencia.HIBERNATE) {
-                    controle.setDAO(new modelo.persistencia.hibernate.FilmeDAOImpl());
+                    controle.setDAO(new persistencia.hibernate.FilmeDAOImpl());
                 } else {
-                    controle.setDAO(new modelo.persistencia.jdbc.FilmeDAOImpl());
+                    controle.setDAO(new persistencia.jdbc.FilmeDAOImpl());
                 }
             }
         } catch (Exception ex) {

@@ -1,5 +1,5 @@
 
-package modelo.persistencia;
+package dominio.persistencia;
 
 import java.util.List;
 

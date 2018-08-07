@@ -1,11 +1,11 @@
-package controle;
+package aplicacao;
 
 
 
 public class ControleLocacao<Locacao> extends ControleGenerico<Locacao> {
 
     public ControleLocacao() {             
-        super(modelo.Locacao.class);
+        super(dominio.Locacao.class);
     }
     
     

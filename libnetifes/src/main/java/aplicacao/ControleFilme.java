@@ -1,5 +1,5 @@
 
-package controle;
+package aplicacao;
 
 
 
@@ -7,7 +7,7 @@ public class ControleFilme<Filme> extends ControleGenerico<Filme> {
            
     
     public ControleFilme() {
-        super(modelo.Filme.class);
+        super(dominio.Filme.class);
     }    
 
     

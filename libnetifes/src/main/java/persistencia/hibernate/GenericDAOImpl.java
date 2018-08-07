@@ -1,10 +1,10 @@
-package modelo.persistencia.hibernate;
+package persistencia.hibernate;
 
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import modelo.persistencia.IGenericDAO;
+import dominio.persistencia.IGenericDAO;
 
 public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
 

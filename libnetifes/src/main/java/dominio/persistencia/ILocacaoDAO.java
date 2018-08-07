@@ -1,10 +1,10 @@
 
 
-package modelo.persistencia;
+package dominio.persistencia;
 
 
 import java.util.List;
-import modelo.Locacao;
+import dominio.Locacao;
 
 /**
  *

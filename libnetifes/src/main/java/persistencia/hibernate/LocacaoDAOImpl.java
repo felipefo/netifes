@@ -1,10 +1,10 @@
 
-package modelo.persistencia.hibernate;
+package persistencia.hibernate;
 
 
-import modelo.persistencia.ILocacaoDAO;
+import dominio.persistencia.ILocacaoDAO;
 import java.util.List;
-import modelo.Locacao;
+import dominio.Locacao;
 
 /**
  * @author felipe
