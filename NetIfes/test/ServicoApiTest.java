@@ -41,7 +41,8 @@ public class ServicoApiTest {
     //@Test
     public void testDoGet() throws Exception {
                 
-        IControle controleAction = FabricaDeControle.getControle("locacao");
+        FabricaDeControle fabrica = new FabricaDeControle();        
+        IControle controleAction = fabrica.getControle("locacao");
 
         Locacao novaLocacao = new Locacao();
         novaLocacao.setData(new Date());                                                
@@ -55,7 +56,8 @@ public class ServicoApiTest {
     //@Test
     public void testDoPostLocacao() throws Exception {
                 
-        IControle controleAction = FabricaDeControle.getControle("filme");
+        FabricaDeControle fabrica = new FabricaDeControle();        
+        IControle controleAction = fabrica.getControle("filme");
 
         Filme novoFilme = new Filme();
         novoFilme.setCategoria("Ação");
