@@ -3,7 +3,7 @@ package controle;
 import java.sql.Time;
 import java.util.Date;
 import junit.framework.TestCase;
-import modelo.Locacao;
+import dominio.Locacao;
 
 /**
  *
@@ -30,12 +30,12 @@ public class ControleLocacaoTest extends TestCase {
      */
     public void testGetClientes() throws Exception {
         
-        Locacao novaLocacao = new Locacao();
-        novaLocacao.setData(new Date());       
-        ControleLocacao<Locacao> controleLocacao = new ControleLocacao<Locacao>();                
-        controleLocacao.inserir(novaLocacao);
-                        
-        System.out.println(controleLocacao.pegarTodos());        
+//        Locacao novaLocacao = new Locacao();
+//        novaLocacao.setData(new Date());       
+//        ControleLocacao<Locacao> controleLocacao = new ControleLocacao<Locacao>();                
+//        controleLocacao.inserir(novaLocacao);
+//                        
+//        System.out.println(controleLocacao.pegarTodos());        
         
     }
     

@@ -24,6 +24,7 @@ public class Filme {
     private  String classificacao;
     private  boolean ehLancamento;
     private  String imagem;
+    private  boolean disponivel;
 
     public int getId() {
         return id;
@@ -39,9 +40,7 @@ public class Filme {
 
     public void setImagem(String imagem) {
         this.imagem = imagem;
-    }
-
-    
+    }    
     
     public String getNome() {
         return nome;
@@ -89,6 +88,10 @@ public class Filme {
 
     public void setEhLancamento(boolean ehLancamento) {
         this.ehLancamento = ehLancamento;
+    }
+    
+     public boolean estaDisponivel() {
+        return this.disponivel;
     }
     
     

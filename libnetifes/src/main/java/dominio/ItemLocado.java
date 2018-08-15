@@ -21,6 +21,58 @@ public class ItemLocado {
     private  float desconto;
     private  double valor;
     private  float instanteParada;
+    private Filme filmeLocado;
+
+    public ItemLocado()       
+    {
+         this.instanteParada = 0;    
+    }
+            
+            
+    
+    
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public float getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(float desconto) {
+        this.desconto = desconto;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public float getInstanteParada() {
+        return instanteParada;
+    }
+
+    public void setInstanteParada(float instanteParada) {
+        this.instanteParada = instanteParada;
+    }
+
+    public Filme getFilmeLocado() {
+        return filmeLocado;
+    }
+
+    public void setFilmeLocado(Filme filmeLocado) {
+        this.filmeLocado = filmeLocado;
+    }
+    
+    
     
     
 }

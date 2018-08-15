@@ -2,10 +2,18 @@ package dominio;
 
 
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -23,10 +31,31 @@ public class Locacao {
     private  int id;
     private  Date data;
     private  Time time;
+    private ItemLocado  itemLocado = new ItemLocado();
+    private Cliente cliente;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+    
+    
+
+    public ItemLocado getItemLocado() {
+        return itemLocado;
+    }
+
+    public void setItemLocado(ItemLocado itemLocado) {
+        this.itemLocado = itemLocado;
+    }          
     
     //soh para testes.
     private  String nome;
-    
+
+     
     public int getId() {
         return id;
     }
