@@ -1,5 +1,5 @@
 
-package dominio.fabrica.builder;
+package dominio.builder;
 
 import dominio.Cliente;
 import dominio.Filme;

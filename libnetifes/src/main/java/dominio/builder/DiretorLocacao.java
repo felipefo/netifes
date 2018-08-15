@@ -1,6 +1,7 @@
 
-package dominio.fabrica.builder;
+package dominio.builder;
 
+import dominio.builder.BuilderLocacao;
 import dominio.Cliente;
 import dominio.Filme;
 import dominio.Locacao;
