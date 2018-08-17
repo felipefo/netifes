@@ -5,6 +5,8 @@ import dominio.Cliente;
 import dominio.Filme;
 import dominio.ItemLocado;
 import dominio.Locacao;
+import util.Inativo;
+import util.Indisponivel;
 
 /**
  *
@@ -31,7 +33,7 @@ public class BuilderLocacao {
     
     public void filmeEstaDisponivel() throws Exception{        
         if(!this.filme.estaDisponivel()){
-            throw new Exception("Filme Indisponivel");
+            throw new Indisponivel("Filme Indisponivel");
         }
     }
     
@@ -40,14 +42,14 @@ public class BuilderLocacao {
             ItemLocado itemLocado = this.locacao.getItemLocado();
             itemLocado.setFilmeLocado(filme);                
         }else{
-            throw new Exception("Filme Indisponivel");
+            throw new Indisponivel("Filme Indisponivel");
         }        
     }        
     public void adicionarCliente() throws Exception{        
         if(this.cliente.isAtivo()){                        
             this.locacao.setCliente(cliente);
         }else{
-            throw new Exception("Cliente não está ativo");
+            throw new Inativo("Cliente não está ativo");
         }        
     }          
      public void adicionarPagamento() throws Exception{        
