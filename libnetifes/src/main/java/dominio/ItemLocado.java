@@ -29,7 +29,9 @@ public class ItemLocado {
     }
             
             
-    
+    public double getTotal(){
+        return (getValor() - getDesconto());
+    }
     
     
     public int getId() {

@@ -25,7 +25,7 @@ public class DiretorLocacao {
         //adiciona o filme que o cliente escolheu        
         builderLocacao.adicionarFilme();
         //adicona o pagamento a locacao
-        builderLocacao.adicionarPagamento();
+        builderLocacao.adicionarPagamento("cartão");
         return locacao;
         }
     }

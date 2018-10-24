@@ -14,7 +14,7 @@
     </servlet>
     <servlet>
         <servlet-name>ServicoApi</servlet-name>
-        <servlet-class>ServicoApi</servlet-class>
+        <servlet-class>ControleApi</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>OiMundo</servlet-name>
@@ -32,11 +32,10 @@
         <servlet-name>ServicoApi</servlet-name>
         <url-pattern>/filme</url-pattern>
     </servlet-mapping>
-     <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ServicoApi</servlet-name>
         <url-pattern>/cliente</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>RecebeJSON</servlet-name>
         <url-pattern>/RecebeJSON</url-pattern>

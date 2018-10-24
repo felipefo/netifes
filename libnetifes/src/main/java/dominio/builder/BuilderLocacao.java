@@ -5,6 +5,9 @@ import dominio.Cliente;
 import dominio.Filme;
 import dominio.ItemLocado;
 import dominio.Locacao;
+import dominio.pagamento.PagamentoBoleto;
+import dominio.pagamento.PagamentoCartao;
+import dominio.pagamento.ProcessaPagamento;
 import util.Inativo;
 import util.Indisponivel;
 
@@ -52,7 +55,13 @@ public class BuilderLocacao {
             throw new Inativo("Cliente não está ativo");
         }        
     }          
-     public void adicionarPagamento() throws Exception{        
+     public void adicionarPagamento(String tipoPagamento) throws Exception{        
+          
         System.out.println("Adicionar pagamento a essa locacao");  
+        if(tipoPagamento.equalsIgnoreCase("cartão")){
+            PagamentoCartao pagamentoCartao = new PagamentoCartao(locacao);            
+        }else if(tipoPagamento.equalsIgnoreCase("boleto")){
+            PagamentoBoleto pagamentoBoleto = new PagamentoBoleto(locacao);            
+        }        
     }      
 }

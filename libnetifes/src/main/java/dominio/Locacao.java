@@ -43,6 +43,9 @@ public class Locacao {
     }
     
     
+    public double getTotal(){
+        return this.itemLocado.getTotal();
+    }
 
     public ItemLocado getItemLocado() {
         return itemLocado;
