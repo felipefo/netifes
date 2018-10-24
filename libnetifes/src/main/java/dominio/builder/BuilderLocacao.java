@@ -55,8 +55,7 @@ public class BuilderLocacao {
             throw new Inativo("Cliente não está ativo");
         }        
     }          
-     public void adicionarPagamento(String tipoPagamento) throws Exception{        
-          
+     public void adicionarPagamento(String tipoPagamento) throws Exception{                  
         System.out.println("Adicionar pagamento a essa locacao");  
         if(tipoPagamento.equalsIgnoreCase("cartão")){
             PagamentoCartao pagamentoCartao = new PagamentoCartao(locacao);            
