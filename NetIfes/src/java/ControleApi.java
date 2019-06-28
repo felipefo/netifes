@@ -6,14 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import controle.FabricaDeControle;
-import controle.FabricaDeControle.EstretegiaPersistencia;
-import controle.IControle;
+import aplicacao.FabricaDeControle;
+import aplicacao.FabricaDeControle.EstretegiaPersistencia;
+import aplicacao.IControle;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.Locacao;
-import modelo.fabrica.FabricaDeModelo;
+import dominio.fabrica.FabricaDeModelo;
 
 
 public class ControleApi extends HttpServlet {

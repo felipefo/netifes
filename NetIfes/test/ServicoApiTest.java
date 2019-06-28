@@ -1,11 +1,11 @@
 
 
-import controle.FabricaDeControle;
-import controle.IControle;
+import aplicacao.FabricaDeControle;
+import aplicacao.IControle;
 import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
-import modelo.Filme;
-import modelo.Locacao;
+import dominio.Filme;
+import dominio.Locacao;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
