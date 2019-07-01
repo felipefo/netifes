@@ -63,7 +63,7 @@ public class ControleApi extends HttpServlet {
        String path = request.getRequestURI().substring(request.getContextPath().length());
        this.modelo = path.replace("/", "");
        FabricaDeControle fabrica = new FabricaDeControle();
-       fabrica.setEstrategia(EstretegiaPersistencia.JDBC);
+       fabrica.setEstrategia(EstretegiaPersistencia.HIBERNATE);
        this.controle  = fabrica.getControle(modelo);       
     }
 
