@@ -4,15 +4,16 @@
   <session-factory>
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
-    <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
-    <property name="connection.driver_class">org.sqlite.JDBC</property>
-    <property name="connection.url">jdbc:sqlite:netfifes1.db</property>
-    <property name="connection.username"/>
-    <property name="connection.password"/>
-    <property name="hibernate.hbm2ddl.auto">update</property>
-    <property name="hibernate.connection.pool_size">100</property>
-    <mapping class="modelo.Locacao"/>
-    <mapping class="modelo.Cliente"/>
-    <mapping class="modelo.Filme"/>
+    <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.url">jdbc:postgresql://raja.db.elephantsql.com:5432/bxwmclqx</property>
+    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.connection.pool_size">1</property>
+    <property name="hibernate.connection.username">bxwmclqx</property>
+    <property name="hibernate.connection.password"></property>
+    <mapping class="dominio.Locacao"/>
+    <mapping class="dominio.Cliente"/>
+    <mapping class="dominio.Filme"/>
+    <mapping class="dominio.ItemLocado"/>
   </session-factory>
 </hibernate-configuration>

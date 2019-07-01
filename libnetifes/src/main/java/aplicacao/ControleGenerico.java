@@ -39,6 +39,8 @@ public abstract class ControleGenerico<T> implements IControle<T> {
     @Override
     public String pegarTodos() throws Exception {
         //conversao para json.              
+        
+        
         List<T> lista = this.dao.listar(type);
         ObjectMapper mapper = new ObjectMapper();
         String jsonLocacoes = mapper.writeValueAsString(lista);

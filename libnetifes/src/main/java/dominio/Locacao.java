@@ -1,19 +1,14 @@
 package dominio;
 
 
+import java.io.Serializable;
 import java.sql.Time;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -23,7 +18,7 @@ import org.hibernate.annotations.GenericGenerator;
  */
 @Entity
 @Table(name = "locacao")
-public class Locacao {
+public class Locacao implements Serializable {
     
     @Id
     @GeneratedValue(generator = "increment")    
@@ -31,9 +26,14 @@ public class Locacao {
     private  int id;
     private  Date data;
     private  Time time;
-    private ItemLocado  itemLocado = new ItemLocado();
+    
+   
+    @OneToOne
+    private ItemLocado  itemLocado;
+    @ManyToOne
     private Cliente cliente;
 
+    
     public Cliente getCliente() {
         return cliente;
     }
@@ -44,9 +44,10 @@ public class Locacao {
     
     
     public double getTotal(){
+        if(this.itemLocado!=null)
         return this.itemLocado.getTotal();
+        return 0;
     }
-
     public ItemLocado getItemLocado() {
         return itemLocado;
     }

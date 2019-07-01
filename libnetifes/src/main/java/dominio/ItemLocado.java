@@ -3,6 +3,7 @@ package dominio;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -21,6 +22,8 @@ public class ItemLocado {
     private  float desconto;
     private  double valor;
     private  float instanteParada;
+    
+    @OneToOne
     private Filme filmeLocado;
 
     public ItemLocado()       
@@ -74,7 +77,6 @@ public class ItemLocado {
         this.filmeLocado = filmeLocado;
     }
     
-    
-    
+      
     
 }

@@ -16,8 +16,9 @@ public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
      * Creates a new instance of GenericDAO
      */
     public void inserir(T obj) throws Exception {
-        try {
-            this.sessao = HibernateUtility.getSession();
+          
+        try {           
+            this.sessao = HibernateUtil.getSession();    
             transacao = sessao.beginTransaction();
             sessao.save(obj);
             sessao.flush();
@@ -27,13 +28,14 @@ public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
             throw ex;
         } finally {
             
-            HibernateUtility.closeSession();
+            //HibernateUtil.closeSession();
         }
     }
 
     public void alterar(T obj) throws Exception {
-        try {
-            this.sessao = HibernateUtility.getSession();
+        
+        try {            
+            this.sessao = HibernateUtil.getSession();    
             transacao = sessao.beginTransaction();
             sessao.update(obj);
             sessao.flush();
@@ -43,13 +45,14 @@ public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
             ex.printStackTrace();
             throw ex;
         } finally {
-            HibernateUtility.closeSession();
+            //hib.closeSession();
         }
     }
 
     public void deletar(T obj) throws Exception {
-        try {
-            this.sessao = HibernateUtility.getSession();
+         //HibernateUtil hib = new HibernateUtil();
+        try {           
+            this.sessao = HibernateUtil.getSession();    
             transacao = sessao.beginTransaction();
             sessao.delete(obj);
             sessao.flush();
@@ -58,15 +61,15 @@ public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
             ex.printStackTrace();
             throw ex;
         } finally {
-            HibernateUtility.closeSession();
+          //  hib.closeSession();
         }
     }
 
     public List<T> listar(Class clazz) throws Exception {
         List objts;
-        try {
-            
-            this.sessao = HibernateUtility.getSession();
+         
+        try {                        
+            this.sessao = HibernateUtil.getSession();    
             objts = null;
             Criteria selectAll = sessao.createCriteria(clazz);            
             objts = selectAll.list();
@@ -75,15 +78,16 @@ public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
             ex.printStackTrace();
             throw ex;
         } finally {
-            HibernateUtility.closeSession();
+            //hib.closeSession();
         }
         return objts;
     }
 
     public T listar(Class clazz, String pk) throws Exception {
         Object ob;
-        try {
-            this.sessao = HibernateUtility.getSession();
+        
+        try {            
+            this.sessao = HibernateUtil.getSession();    
             //Object objt = sessao.load(clazz, new Integer(Integer.parseInt(pk)) );
             ob = sessao.load(clazz, new Integer(Integer.parseInt(pk)));            
             sessao.flush();
@@ -92,7 +96,7 @@ public abstract class GenericDAOImpl<T> implements IGenericDAO<T> {
             ex.printStackTrace();
             throw ex;
         } finally {
-            HibernateUtility.closeSession();
+           // hib.closeSession();
         }
     }
 
